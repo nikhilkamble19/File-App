@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>Barcode Generation</h3>
+  <hr> 
+  <form (ngSubmit)="onSubmit();" #fgbarcodeForm="ngForm">
+
+      <div class="form-group">
+                    <label for="fileName">File ID</label>
+                    <input type="text" class="form-control"
+                    name="fileName"
+                    [(ngModel)]="model.fileName"
+                    #fileName="ngModel"
+                    required>
+                </div>
+			
+			<div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control"
+                    name="description"
+                    [(ngModel)]="model.description"
+                    #description="ngModel"
+                    required>
+                </div>
+                   
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

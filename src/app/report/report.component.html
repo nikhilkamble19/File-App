@@ -1,0 +1,58 @@
+<div class="container">
+  <h3>Report</h3>
+  <hr>
+  <form class="form-vertical">
+    <form>
+
+      <div class="form-group">
+        <label for="scanbarcode">Please Scan</label>
+        <input type="text" class="form-control"
+        name="scanbarcode"
+        [(ngModel)]="model.scanbarcode"
+        #scanbarcode="ngModel"
+        (change)="onChangePartNumber($event)"
+        appAutofocus
+        required>
+      </div>
+    </form>
+  </form>
+
+  <div *ngIf=(this.fetchFile)>
+  <div>
+    <label for="serial_number">Serial Number:</label> {{this.fetchFile.BarcodeSerial}}
+  </div>
+
+  <div>
+    <label for="inward_date">File Id:</label> {{this.fetchFile.FileId}}
+  </div>
+
+  <div>
+    <label for="class">File Description:</label> {{this.fetchFile.FileDescription}}
+  </div>
+  
+  <div>
+    <label for="class">Created By:</label> {{this.fetchFile.CreatedBy}}
+  </div>
+
+  <div>
+    <label for="class">Created On:</label> {{this.fetchFile.CreatedOn}}
+  </div>
+
+  <div>
+    <label for="class">Location Id:</label> {{this.fetchFile.LocationId}}
+  </div>
+
+  <div>
+    <label for="class">Location Name:</label> {{this.fetchLocation.LocationName}}
+  </div>
+
+  <div>
+    <label for="class">Putaway By:</label> {{this.fetchFile.PutawayBy}}
+  </div>
+
+  <div>
+    <label for="class">Putaway By:</label> {{this.fetchFile.PutawayOn}}
+  </div>
+
+
+</div>

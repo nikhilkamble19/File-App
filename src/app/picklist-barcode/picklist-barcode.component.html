@@ -1,0 +1,63 @@
+<div class="container">
+    <h3>Pick List Generation</h3>
+    <hr> 
+    <form (ngSubmit)="onSubmit();" #fgbarcodeForm="ngForm">
+
+					
+				<div class="form-group">
+                    <label for="part">Part Number</label>
+                    <select name="part"
+                    class="form-control"
+                    [(ngModel)]="model.part"
+                    #part="ngModel"
+                    (change)="onChangePartNumber($event)"
+                    required>
+                    
+                    <option *ngFor="let m of partsMap" [ngValue]="m">{{m.part_number}}</option>
+                    </select>
+                    <div [hidden]="part.valid || part.pristine"
+                    class="alert alert-danger">
+                    Part Number is required
+                    </div>
+                 </div>
+					
+					<div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" class="form-control"
+                        name="quantity"
+                        [(ngModel)]="model.quantity"
+                        #quantity="ngModel"
+                        required>
+                        <div [hidden]="quantity.valid || quantity.pristine"
+                             class="alert alert-danger">
+                        Quantity is required
+                        </div>
+                    </div>
+        <button type="submit" class="btn btn-success">Save</button>
+
+        <div class="table-responsive" style="font-size:14px;" *ngIf="this.aggregated != null">
+          <table>
+            <thead>
+              <tr>
+                <th>Part Number</th>
+                <th>Part Id</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of aggregated">
+                <td>
+                  <!-- {{data.}}
+                </td>
+                <td>
+                  <!-- {{this.singlepart._id}} -->
+                </td>
+                <td>
+                  <!-- {{this.singlsepart._id}} -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  </form>
+</div> -->

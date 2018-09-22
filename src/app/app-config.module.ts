@@ -7,7 +7,8 @@ export class AppConfig {
 }
 
 export const APP_DI_CONFIG: AppConfig = {
-  apiEndpoint: 'https://node-file-server.herokuapp.com/api'
+  // apiEndpoint: 'https://node-file-server.herokuapp.com/api'
+  apiEndpoint: 'http://localhost:3000/api'
 };
 
 @NgModule({

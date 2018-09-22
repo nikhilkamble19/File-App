@@ -15,7 +15,7 @@ import { AlertService } from '../shared/alert.service';
   styleUrls: ['./putaway.component.css']
 })
 export class PutawayComponent implements OnInit {
-	
+  
 
   model: FinishedGood;
   fetchLocation: Array<Object> = [];

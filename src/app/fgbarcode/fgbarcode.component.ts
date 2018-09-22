@@ -42,8 +42,8 @@ export class FgbarcodeComponent implements OnInit {
   }
 
   savePart(file_json: any){
-  	console.log(file_json);
-  	this.FinishedGoodRecordService.addfinishedgoodsrecord(this.model.fileName,this.model.description).subscribe(
+    console.log(file_json);
+    this.FinishedGoodRecordService.addfinishedgoodsrecord(this.model.fileName,this.model.description).subscribe(
       data => {
         console.log(data);
         if (data.length == 0) {

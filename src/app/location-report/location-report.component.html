@@ -1,3 +1,29 @@
-<p>
-  location-report works!
-</p>
+	<div class="table-responsive" style="font-size:14px;" *ngIf="this.fetchFile">
+    <table class="table table-bordered table-striped table-highlight;">
+      <thead>
+        <tr>
+          <th>Barcode</th>
+          <th>File Name</th>
+          <th>File Description</th>
+          <th>Location ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of fetchFile">
+          <td>
+            {{data.BarcodeSerial}}
+          </td>
+          <td>
+            {{data.FileId}}
+          </td>
+          <td>
+            {{data.FileDescription}}
+          </td>
+          <td>
+            {{data.LocationId}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

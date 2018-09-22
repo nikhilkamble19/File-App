@@ -51,10 +51,13 @@ export class FgbarcodeComponent implements OnInit {
         if (data.length == 0) {
           return;
         }
-        console.log(data.length);
+        // console.log(data.length);
         var mat:JSON = data;
-        this.alertService.success("New File Added");
+        // debugger;
+         this.alertService.success("New File Added");
         this.printIt(mat);
+        this.model.fileName ="";
+        this.model.description="";
       },
       error => {
         console.log(JSON.stringify(error))

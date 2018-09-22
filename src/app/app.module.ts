@@ -22,6 +22,7 @@ import { LoaderService } from './shared/loader.service';
 import { FinishedGoodService } from './shared/finishedgoods.service';
 import { PickListService } from './shared/picklist.service';
 import { UtilityService } from './shared/utility.service';
+import { AlertComponent } from './directives/alert.component';
 import { AlertService } from './shared/alert.service';
 import { FinishedGoodRecordService } from './shared/fgrecord.service';
 import { PutawayComponent } from './putaway/putaway.component';
@@ -42,7 +43,7 @@ import { AutofocusDirective } from './autofocus.directive';
     LocationReportComponent,
     PutawayComponent,
     AutofocusDirective,
-       
+    AlertComponent,
     
   ],
   imports: [

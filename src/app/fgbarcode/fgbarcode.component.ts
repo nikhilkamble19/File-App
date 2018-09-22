@@ -4,6 +4,7 @@ import { Part } from '../shared/part.model';
 import { PartService } from '../shared/part.service';
 import { FinishedGood } from '../shared/finishedgoods.model';
 import { LoaderService } from '../shared/loader.service';
+import { AlertService } from '../shared/alert.service';
 import { FinishedGoodService } from '../shared/finishedgoods.service';
 import { UtilityService } from '../shared/utility.service';
 import { FinishedGoodRecord } from '../shared/fgrecord.model';
@@ -23,7 +24,8 @@ export class FgbarcodeComponent implements OnInit {
   private loaderService: LoaderService,
   private FinishedGoodService: FinishedGoodService,
   private FinishedGoodRecordService: FinishedGoodRecordService,
-  private utilityService: UtilityService) { 
+  private utilityService: UtilityService,
+  private alertService: AlertService) { 
   this.model = new FinishedGoodRecord('','');
   }
 
@@ -51,6 +53,7 @@ export class FgbarcodeComponent implements OnInit {
         }
         console.log(data.length);
         var mat:JSON = data;
+        this.alertService.success("New File Added");
         this.printIt(mat);
       },
       error => {

@@ -24,6 +24,7 @@ export class PutawayComponent implements OnInit {
   incrementvariable: any = 0;
   locationBarcode: any;
   locationId: any;
+  locationName: any;
   finishedgoodsId: any;
 
   constructor(private finishedGoodService: FinishedGoodService,
@@ -78,6 +79,7 @@ export class PutawayComponent implements OnInit {
         // console.log("Is True");
         this.locationBarcode = i["LocationId"];
         this.locationId = i["LocationId"];
+        this.locationName = i["LocationName"]
         // console.log(this.locationId);
         break;
       }
@@ -86,7 +88,7 @@ export class PutawayComponent implements OnInit {
     for(let n of this.fetchfinishgoods){
       if(this.model.scanbarcode == n["BarcodeSerial"]){
         this.finishedgoodsId = n["BarcodeSerial"];
-        this.finishedGoodService.updatefinishedgoods(this.finishedgoodsId, this.locationId).subscribe(
+        this.finishedGoodService.updatefinishedgoods(this.finishedgoodsId, this.locationId,this.locationName).subscribe(
           data => { 
             console.log(data);
             this.alertService.success("File Location Updated");

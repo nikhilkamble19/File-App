@@ -31,7 +31,7 @@ export class FinishedGoodService {
 
     updatefinishedgoods(fileId: any,locationId: any,locationName: any) {
       //return this.http.get(`${this.config.apiEndpoint}/insertFile?fileID=123&fileDescription=asd`)
-      return this.http.get(`${this.config.apiEndpoint}/putaway`,{params:{BarcodeSerial:fileId, LocationId:locationId, LocationName:locationName}})
+      return this.http.get(`${this.config.apiEndpoint}/putaway`,{params:{BarcodeSerial:fileId, locationId:locationId, locationName:locationName}})
         .map((response: Response) => {
             let finshedgoodsrecordjson = response.json();
             if (finshedgoodsrecordjson) {

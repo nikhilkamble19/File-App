@@ -89,10 +89,10 @@ export class PutawayComponent implements OnInit {
         this.finishedGoodService.updatefinishedgoods(this.finishedgoodsId, this.locationId).subscribe(
           data => { 
             console.log(data);
-            this.alertService.success("Finish Goods Updated");
+            this.alertService.success("File Location Updated");
           },
           error => {
-            this.alertService.error("Finish Goods Not Updated");
+            this.alertService.error("File Locations Not Updated");
           }
         );
       }
